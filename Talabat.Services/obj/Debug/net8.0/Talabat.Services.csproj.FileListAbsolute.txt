@@ -1,0 +1,15 @@
+C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\bin\Debug\net8.0\Talabat.Services.deps.json
+C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\bin\Debug\net8.0\Talabat.Services.dll
+C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\bin\Debug\net8.0\Talabat.Services.pdb
+C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\obj\Debug\net8.0\Talabat.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\obj\Debug\net8.0\Talabat.Services.AssemblyInfoInputs.cache
+C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\obj\Debug\net8.0\Talabat.Services.AssemblyInfo.cs
+C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\obj\Debug\net8.0\Talabat.Services.csproj.CoreCompileInputs.cache
+C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\obj\Debug\net8.0\Talabat.Services.dll
+C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\obj\Debug\net8.0\refint\Talabat.Services.dll
+C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\obj\Debug\net8.0\Talabat.Services.pdb
+C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\obj\Debug\net8.0\ref\Talabat.Services.dll
+C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\bin\Debug\net8.0\Talabat.Core.dll
+C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\bin\Debug\net8.0\Talabat.Core.pdb
+C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\obj\Debug\net8.0\Talabat.Services.csproj.AssemblyReference.cache
+C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\obj\Debug\net8.0\Talabat..D0FE60AD.Up2Date
