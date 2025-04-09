@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Talabat.api.Attributes;
 using Talabat.Core.Entities;
 using Talabat.Core.Repositories_Interfaces;
 using Talabat.Core.Specification;
@@ -16,6 +17,8 @@ namespace Talabat.APIs.Controllers
             _brandRepo = brandRepo;
         }
 
+
+        //[CacheAttributes(30)]
         [HttpGet]
         public async Task<ActionResult<ProductBrand>> GetBrand(string? sort, string? search)
         {
@@ -24,6 +27,8 @@ namespace Talabat.APIs.Controllers
             return Ok(Brands);
         }
 
+
+        //[CacheAttributes(30)]
         [HttpGet("{id}")]
 
         public async Task <ActionResult<ProductBrand>> GetBrandById(int id )

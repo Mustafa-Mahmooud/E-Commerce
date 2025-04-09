@@ -7,6 +7,7 @@ using AutoMapper;
 using Talabat.APIs.DTOS;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Talabat.api.Attributes;
 
 namespace Talabat.APIs.Controllers
 {
@@ -24,8 +25,9 @@ namespace Talabat.APIs.Controllers
                      
         }
 
-        
-          [HttpGet]
+        [AllowAnonymous]
+        [CacheAttributes(30)]
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<ProductDto>>> GetProduct(string? sort, int? brand, int? category, string? search)
         {
             var Spec = new ProductSpecification(sort, brand, category, search);
@@ -38,6 +40,7 @@ namespace Talabat.APIs.Controllers
             return Ok(_mapper.Map<IEnumerable<Product> ,IEnumerable<ProductDto>>(products));
         }
 
+        [CacheAttributes(30)]
         [AllowAnonymous] //  public no need for authorization 
         [HttpGet("{id}")]
         public async Task<ActionResult<ProductDto>> GetProductById(int id)

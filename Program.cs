@@ -7,12 +7,14 @@ using System.Text;
 using Talabat.APIs.Helper;
 using Talabat.Core.Entities;
 using Talabat.Core.Repositories_Interfaces;
+using Talabat.Core.ServiceContract;
 using Talabat.Repository.Data;
 using Talabat.Repository.Data.DataSeed;
 using Talabat.Repository.Data.Identity;
 using Talabat.Repository.Repositories;
+using Talabat.Service;
 using Talabat.Services.Auth;
-using Talabat.Services.Caching;
+
 using static OpenAI.GPT3.ObjectModels.SharedModels.IOpenAiModels;
 
 namespace Talabat.APIs
@@ -65,7 +67,7 @@ namespace Talabat.APIs
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             builder.Services.AddScoped(typeof(IBasketCustomer), typeof(BasketCustomerRepository));
             builder.Services.AddScoped<IPayment, Payment>();
-            builder.Services.AddSingleton<ICache, Cache>();
+            builder.Services.AddScoped(typeof(ICache), typeof(CacheAttribute));
 
             builder.Services.AddAuthentication().AddJwtBearer("Bearer", options =>
             {

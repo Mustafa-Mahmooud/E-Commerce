@@ -16,7 +16,7 @@ namespace Talabat.APIs.Controllers
             _basketCustomer = basketCustomer;
         }
 
-        [HttpGet("{id}")]
+        [HttpGet]
 
         public async Task<ActionResult<CustomerBasket>> GetBasket(string id)
         {
@@ -36,16 +36,17 @@ namespace Talabat.APIs.Controllers
             return Ok(basket);
         }
 
-        [HttpDelete]
 
-        public async Task DeleteBasket(string id)
+        [HttpDelete]
+        public async Task<ActionResult<CustomerBasket>> DeleteBrand(string id)
         {
-          var flag = await _basketCustomer?.DeleteBasketAsync(id);
-     
-           
+
+         var flag =  await _basketCustomer.DeleteBasketAsync(id);
+           if(flag) return NoContent();
+           else return BadRequest();
+
 
         }
 
     }
-     
 }

@@ -1,49 +1,52 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.AspNetCore.Http;
+using StackExchange.Redis;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Talabat.Core.Repositories_Interfaces;
+using Talabat.Core.ServiceContract;
 
-[AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
-public class CacheAttribute : Attribute, IAsyncActionFilter
+
+namespace Talabat.Service
 {
-    private readonly int _durationInSeconds;
-
-    public CacheAttribute(int durationInSeconds)
+    public class CacheAttribute : ICache
     {
-        _durationInSeconds = durationInSeconds;
-    }
-
-    public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
-    {
-
-        var cacheService = context.HttpContext.RequestServices.GetRequiredService<ICache>();
-
-        var cacheKey = context.HttpContext.Request.Path + context.HttpContext.Request.QueryString;
-
-
-        var cachedResponse = await cacheService.GetCachedAsync(cacheKey);
-
-        if (!string.IsNullOrEmpty(cachedResponse))
+        private IDatabase _db;
+        public CacheAttribute(IConnectionMultiplexer rdx)
         {
-           
-            context.Result = new ContentResult
+            _db = rdx.GetDatabase();
+        }
+        public async Task CreateCache(string CacheKey, object Response, TimeSpan time)
+        {
+            var option = new JsonSerializerOptions
             {
-                Content = cachedResponse,
-                ContentType = "application/json",
-                StatusCode = 200
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
             };
-            return;
+
+            var response = JsonSerializer.Serialize(Response, option);
+
+            await _db.StringSetAsync(CacheKey, response, time);
+
+            //var res = 
+            //return res;
         }
 
-        
-        var executedContext = await next();
 
-
-        if (executedContext.Result is ObjectResult result && result.StatusCode == 200)
+        public async Task<string?> GetFromCacheAsync(string CacheKey)
         {
-            await cacheService.SetCacheAsync(cacheKey, result.Value, TimeSpan.FromSeconds(_durationInSeconds));
+            var item = await _db.StringGetAsync(CacheKey);
+            if (item.HasValue)
+            {
+                return item.ToString();
+            }
+            return null;
         }
+
+
+
+
     }
 }

@@ -9,7 +9,7 @@ public class ChatGptAssistantController : ControllerBase
         _chatGptService = chatGptService;
     }
 
-    [HttpGet("{prompt}")]
+    [HttpGet]
     public async Task<IActionResult> GetResponse(string prompt)
     {
         if (string.IsNullOrEmpty(prompt))

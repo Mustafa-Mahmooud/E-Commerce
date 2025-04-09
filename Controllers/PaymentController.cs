@@ -13,8 +13,8 @@ public class PaymentController : BaseApiController
         _payment = payment;
         _logger = logger;
     }
-    
-    [HttpPost]
+
+    [HttpPost("{BasketId}")]
     public async Task<ActionResult<CustomerBasket>> CreateOrUpdatePayment(string BasketId)
     {
         if (string.IsNullOrWhiteSpace(BasketId))

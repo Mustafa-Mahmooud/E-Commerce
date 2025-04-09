@@ -16,5 +16,7 @@ namespace Talabat.APIs.DTOS
         public string Password { get; set; }
         [Required]
         public string PhoneNumber { get; set; }
+
+        public string Token{ get; set; }
     }
 }
