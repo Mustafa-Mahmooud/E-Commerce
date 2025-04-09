@@ -13,3 +13,4 @@ C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\bin\Debug\net8.0\Talabat
 C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\bin\Debug\net8.0\Talabat.Core.pdb
 C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\obj\Debug\net8.0\Talabat.Services.csproj.AssemblyReference.cache
 C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\obj\Debug\net8.0\Talabat..D0FE60AD.Up2Date
+C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Services\obj\Debug\net8.0\Talabat.Services.sourcelink.json

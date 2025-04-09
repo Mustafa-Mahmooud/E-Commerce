@@ -12,3 +12,4 @@ C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Core\obj\Debug\net8.0\ref\Talabat
 C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Core\obj\Debug\net8.0\Talabat.Core.csproj.AssemblyReference.cache
 C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Core\bin\Debug\net8.0\Talabat.Core.runtimeconfig.json
 C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Core\obj\Debug\net8.0\Talabat.Core.genruntimeconfig.cache
+C:\Users\20120\Desktop\E-Commerce.maha\Talabat.Core\obj\Debug\net8.0\Talabat.Core.sourcelink.json
